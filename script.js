@@ -4,11 +4,11 @@
 
 // TODO: Ersetze "12345678" durch den echten Zugangscode,
 // den deine Freundin finden soll (nur Zahlen, keine Leerzeichen).
-const CORRECT_CODE = "12345678";
+const CORRECT_CODE = "2364913842";
 
 // TODO: Ersetze "../mission-02/index.html" durch den Pfad
 // zur nächsten Seite, auf die sie nach richtigem Code weitergeleitet wird.
-const NEXT_PAGE_URL = "../mission-02/index.html";
+const NEXT_PAGE_URL = "wheel/index.html";
 
 // TODO: Optional — passe die Terminal-Nachrichten an.
 // Sie werden nacheinander eingetippt, wie in einem alten System.
