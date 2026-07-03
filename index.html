@@ -3,9 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- TODO: Ändere den Seitentitel nach Belieben -->
+    <title>CLASSIFIED // MISSION 01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Test
+
+<div class="scanlines"></div>
+
+<header>
+    <div class="header-bar">
+        <span class="stamp">TOP SECRET</span>
+
+        <!-- TODO: Ändere das Dokument-Label nach Belieben -->
+        <span class="doc-id">DOC-ID: N&L-OS // MIS-01</span>
+
+        <span class="clearance">FREIGABE: STUFE 5</span>
+    </div>
+
+    <!-- TODO: Passe den Titel an (z.B. Missionsname) -->
+    <h1>MISSION<br><span class="glow">BRIEFING</span></h1>
+
+    <p class="subtitle">
+        <!-- TODO: Untertitel anpassen - z.B. Missionscode oder kurze Beschreibung -->
+        Direktive // Einsatz 01 von <span class="redact">███</span> — Vollständige Geheimhaltung erforderlich
+    </p>
+</header>
+
+<main>
+
+    <!-- ── AGENTENSTATUS ─────────────────────────────────── -->
+    <section class="card">
+        <div class="card-label">AGENTENSTATUS</div>
+
+        <div class="agent-row">
+            <span class="col-label">Deckname</span>
+            <!-- TODO: Ersetze [AGENTENNAME] durch den Decknamen deiner Freundin,
+                 z.B. "NELL" oder einen anderen Spitznamen -->
+            <span class="col-value glow">[AGENTENNAME]</span>
+        </div>
+
+        <div class="agent-row">
+            <span class="col-label">Freigabestufe</span>
+            <span class="col-value">LEVEL 5 // COSMIC</span>
+        </div>
+
+        <div class="agent-row">
+            <span class="col-label">Einsatzstatus</span>
+            <span class="col-value blink">● AKTIV</span>
+        </div>
+
+        <div class="agent-row last">
+            <span class="col-label">Klassifizierung</span>
+            <span class="col-value">STRENG GEHEIM</span>
+        </div>
+
+        <div class="progress-block">
+            <div class="progress-labels">
+                <span>Missionsfortschritt</span>
+                <!-- TODO: Du kannst hier die Gesamtanzahl der Missionen anpassen -->
+                <span>Einsatz 01 / <span class="redact">██</span></span>
+            </div>
+            <div class="bar">
+                <!-- TODO: --target anpassen (z.B. bei 5 Missionen = 20% für Einsatz 1) -->
+                <div class="fill" style="--target: 10%"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MISSIONSDIREKTIVE ─────────────────────────────── -->
+    <section class="card">
+        <div class="card-label">MISSIONSDIREKTIVE</div>
+
+        <!-- TODO: Hier die Missionsinstruktionen eintragen.
+             Erkläre deiner Freundin, was sie tun soll, um die Zahlenkette zu finden.
+             Die gefundene Zahlenkette ist dann der Code, den sie unten eingeben muss.
+
+             Tipps für Missionen:
+             - Eine Notiz unter einer bestimmten Sache verstecken
+             - Eine Zahl in einem Buch auf einer bestimmten Seite
+             - Ein Rätsel, das zur Zahl führt
+             - Eine Koordinate oder ein Datum in versteckter Form -->
+
+        <p>
+            Agentin, das System hat eine kritische Datenlücke identifiziert.
+            Ein Erinnerungsfragment aus unserem gemeinsamen Archiv wurde korrumpiert
+            und muss durch Feldarbeit rekonstruiert werden.
+        </p>
+
+        <p>
+            <span class="inline-label">// AUFTRAG:</span>
+        </p>
+
+        <p>
+            [HIER KOMMEN DEINE MISSIONSINSTRUKTIONEN. Schreibe z.B.:
+            „Begib dich zu [Ort]. Dort findest du [Hinweis]. Der Code
+            befindet sich [genauer Hinweis]." — So lange und detailliert
+            wie nötig.]
+        </p>
+
+        <p>
+            [Falls du mehrere Schritte brauchst, füge weitere &lt;p&gt;-Absätze ein.]
+        </p>
+
+        <!-- TODO: Passe die Warnung/den Hinweis am Ende nach Belieben an -->
+        <div class="warn-box">
+            <span class="warn-icon">▲</span>
+            Diese Direktive ist für deine Augen bestimmt. Das N&L-OS übernimmt
+            keine Verantwortung für Herzrasen, Lachen oder erhöhte Neugierigkeit.
+        </div>
+    </section>
+
+    <!-- ── SYSTEMPROTOKOLL ───────────────────────────────── -->
+    <section class="card">
+        <div class="card-label">SYSTEMPROTOKOLL</div>
+        <div id="terminal"></div>
+    </section>
+
+    <!-- ── ZUGANGSCODE ───────────────────────────────────── -->
+    <section class="card code-card">
+        <div class="card-label">ZUGANGSCODE // ENTSCHLÜSSELUNG</div>
+
+        <p class="code-hint">
+            Gib die gefundene Zahlenkette ein, um Zugang zur nächsten Direktive zu erhalten.
+            Die Übertragung ist verschlüsselt.
+        </p>
+
+        <div class="input-group">
+            <input
+                type="text"
+                id="codeInput"
+                inputmode="numeric"
+                placeholder="_ _ _ _ _ _ _ _"
+                autocomplete="off"
+                spellcheck="false"
+            >
+            <button id="submitBtn">ENTSCHLÜSSELN</button>
+        </div>
+
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <!-- TODO: Diese Zeile kannst du nach Belieben anpassen -->
+        <span>N&L-OS v4.0 // EINSATZLEITUNG</span>
+        <span class="redact">████████████</span>
+        <span>VERSCHLÜSSELT</span>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
